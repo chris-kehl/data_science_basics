@@ -17,3 +17,8 @@ crosstab_norm = crosstab_01.div(crosstab_01.sum(1), axis = 0)
  
 # visualize the crosstab_norm by using the code for a stacked bar chart
 crosstab_norm.plot(kind='bar', stacked = True)
+
+# How to Construct Contingency Tables Using Python
+crosstab_02 = pd.crosstab(bank_train['response'], bank_train['previous_outcome'])
+
+round(crosstab_02.div(crosstab_02.sum(0), axis =1)*100, 1)
